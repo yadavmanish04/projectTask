@@ -17,9 +17,10 @@ export default function Sidebar() {
     : baseLinks;
 
   return (
-<aside className="w-16 md:w-60 shrink-0 border-r border-slate-200 bg-white p-2 md:p-4 dark:border-slate-800 dark:bg-slate-900">      <div className="mb-6 px-2">
-        <h1 className="text-xl font-bold text-brand-600">TaskFlow</h1>
-        <p className="text-xs text-slate-500">Team task manager</p>
+<aside className="w-20 md:w-60 shrink-0 border-r border-slate-200 bg-white p-3 dark:border-slate-800 dark:bg-slate-900"> 
+      <div className="mb-6 px-2">
+        <h1 className="text-lg md:text-xl font-bold text-brand-600 text-center lg:text-left">TaskFlow</h1>
+        <p className="hidden lg:block text-xs text-slate-500">Team task manager</p>
       </div>
       <nav className="space-y-1">
         {links.map(({ to, label, icon: Icon }) => (
@@ -36,7 +37,8 @@ export default function Sidebar() {
             }
           >
             <Icon size={18} />
-<span className="hidden md:inline">{label}</span>          </NavLink>
+<span className="hidden lg:inline">{label}</span>        
+  </NavLink>
         ))}
       </nav>
     </aside>
