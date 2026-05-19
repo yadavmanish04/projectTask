@@ -97,8 +97,7 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] p-5">
-      {/* Header */}
+<div className="min-h-screen bg-[#f8fafc] dark:bg-slate-950 p-5 transition-colors">      {/* Header */}
 
       <div className="mb-6">
         <h1 className="text-2xl font-semibold text-slate-900">
@@ -120,7 +119,7 @@ export default function Dashboard() {
           return (
             <div
               key={index}
-              className="group rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-200 hover:shadow-md"            >
+              className="group rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-200 hover:shadow-md dark:border-slate-800 dark:bg-slate-900"          >
 
               <div className="flex items-start justify-between">
 
@@ -149,7 +148,7 @@ export default function Dashboard() {
 
   {/* Pie Chart */}
 
-  <div className="relative overflow-hidden rounded-[32px] border border-slate-200/70 bg-gradient-to-br from-white to-slate-50 p-6 shadow-[0_10px_40px_rgba(0,0,0,0.04)]">
+  <div className="relative overflow-hidden rounded-[32px] border border-slate-200/70 bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-950 p-6 shadow-[0_10px_40px_rgba(0,0,0,0.04)]">
 
     {/* Background Glow */}
 
@@ -220,7 +219,7 @@ export default function Dashboard() {
 
   {/* Bar Chart */}
 
-  <div className="relative overflow-hidden rounded-[32px] border border-slate-200/70 bg-gradient-to-br from-white to-slate-50 p-6 shadow-[0_10px_40px_rgba(0,0,0,0.04)]">
+  <div className="relative overflow-hidden rounded-[32px] border border-slate-200/70 bg-gradient-to-br from-white to-slate-50  dark:from-slate-900 dark:to-slate-950 p-6 shadow-[0_10px_40px_rgba(0,0,0,0.04)]">
 
     {/* Background Glow */}
 
