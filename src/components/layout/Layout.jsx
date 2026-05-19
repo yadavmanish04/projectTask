@@ -8,8 +8,7 @@ export default function Layout() {
       <Sidebar />
       <div className="flex min-w-0 flex-1 flex-col">
         <Navbar />
-        <main className="flex-1 p-4 md:p-6">
-          <Outlet />
+<main className="flex-1 p-4 md:p-6 bg-slate-50 dark:bg-slate-950 transition-colors">          <Outlet />
         </main>
       </div>
     </div>
