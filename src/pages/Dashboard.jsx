@@ -100,7 +100,7 @@ export default function Dashboard() {
 <div className="min-h-screen bg-[#f8fafc] dark:bg-slate-950 p-5 transition-colors">      {/* Header */}
 
       <div className="mb-6">
-        <h1 className="text-2xl font-semibold text-slate-900">
+        <h1 className="text-2xl font-semibold text-slate-900 dark:text-slate-100">
           Dashboard Overview
         </h1>
 
@@ -128,7 +128,7 @@ export default function Dashboard() {
                     {item.label}
                   </p>
 
-                  <h2 className="mt-2 text-2xl font-semibold text-slate-900">
+                  <h2 className="mt-2 text-2xl font-semibold text-slate-900 dark:text-slate-100">
                     {item.value}
                   </h2>
                 </div>
@@ -159,7 +159,7 @@ export default function Dashboard() {
       <div className="mb-5 flex items-start justify-between">
 
         <div>
-          <h3 className="text-lg font-semibold tracking-tight text-slate-900">
+          <h3 className="text-lg font-semibold tracking-tight text-slate-900 dark:text-slate-100">
             Task Status
           </h3>
 
@@ -230,7 +230,7 @@ export default function Dashboard() {
       <div className="mb-5 flex items-start justify-between">
 
         <div>
-          <h3 className="text-lg font-semibold tracking-tight text-slate-900">
+          <h3 className="text-lg font-semibold tracking-tight text-slate-900 dark:text-slate-100">
             Performance Snapshot
           </h3>
 
@@ -312,7 +312,7 @@ export default function Dashboard() {
       <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
 
         <div className="mb-6">
-          <h3 className="text-xl font-semibold text-slate-900">
+          <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
             Recent Activity
           </h3>
 
@@ -335,7 +335,7 @@ export default function Dashboard() {
               >
 
                 <div>
-                  <h4 className="font-semibold text-slate-900">
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100">
                     {t.title}
                   </h4>
 
