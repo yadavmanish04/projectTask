@@ -104,7 +104,7 @@ export default function Dashboard() {
           Dashboard Overview
         </h1>
 
-        <p className="mt-1 text-sm text-slate-500">
+        <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
           Monitor your projects and task progress
         </p>
       </div>
@@ -124,7 +124,7 @@ export default function Dashboard() {
               <div className="flex items-start justify-between">
 
                 <div>
-                  <p className="text-sm font-medium text-slate-500">
+                  <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
                     {item.label}
                   </p>
 
@@ -163,7 +163,7 @@ export default function Dashboard() {
             Task Status
           </h3>
 
-          <p className="mt-1 text-sm text-slate-500">
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
             Distribution of tasks
           </p>
         </div>
@@ -234,7 +234,7 @@ export default function Dashboard() {
             Performance Snapshot
           </h3>
 
-          <p className="mt-1 text-sm text-slate-500">
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
             Completed vs overdue tasks
           </p>
         </div>
@@ -316,13 +316,13 @@ export default function Dashboard() {
             Recent Activity
           </h3>
 
-          <p className="mt-1 text-sm text-slate-500">
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
             Latest updates from your workspace
           </p>
         </div>
 
         {recent.length === 0 ? (
-          <div className="rounded-2xl bg-slate-50 py-12 text-center text-sm text-slate-500">
+          <div className="rounded-2xl bg-slate-50 py-12 text-center text-sm text-slate-500 dark:text-slate-400">
             No recent activity found
           </div>
         ) : (
@@ -339,7 +339,7 @@ export default function Dashboard() {
                     {t.title}
                   </h4>
 
-                  <p className="mt-1 text-sm text-slate-500">
+                  <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                     {t.project?.title} • {t.status}
                   </p>
                 </div>
