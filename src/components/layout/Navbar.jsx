@@ -16,7 +16,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-slate-200 bg-white/80 px-4 backdrop-blur dark:border-slate-800 dark:bg-slate-900/80">
-      <div className="md:hidden text-lg font-bold text-brand-600">TaskFlow</div>
+      {/* <div className="md:hidden text-lg font-bold text-brand-600">TaskFlow</div> */}
       <div className="ml-auto flex items-center gap-3">
         <button onClick={toggle} className="btn-ghost p-2" aria-label="toggle theme">
           {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
