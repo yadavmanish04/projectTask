@@ -17,8 +17,7 @@ export default function Sidebar() {
     : baseLinks;
 
   return (
-    <aside className="hidden w-60 shrink-0 border-r border-slate-200 bg-white p-4 md:block dark:border-slate-800 dark:bg-slate-900">
-      <div className="mb-6 px-2">
+<aside className="w-16 md:w-60 shrink-0 border-r border-slate-200 bg-white p-2 md:p-4 dark:border-slate-800 dark:bg-slate-900">      <div className="mb-6 px-2">
         <h1 className="text-xl font-bold text-brand-600">TaskFlow</h1>
         <p className="text-xs text-slate-500">Team task manager</p>
       </div>
@@ -37,8 +36,7 @@ export default function Sidebar() {
             }
           >
             <Icon size={18} />
-            {label}
-          </NavLink>
+<span className="hidden md:inline">{label}</span>          </NavLink>
         ))}
       </nav>
     </aside>
