@@ -69,19 +69,23 @@ const counts = {
   projects: projects.length,
   total: tasks.length,
 
-  todo: tasks.filter((t) => t.status === 'todo').length,
-
-  inProgress: tasks.filter(
-    (t) => t.status === 'in_progress'
+  todo: tasks.filter(
+    (t) => t.status?.toLowerCase() === 'to do'
   ).length,
 
-  done: tasks.filter((t) => t.status === 'done').length,
+  inProgress: tasks.filter(
+    (t) => t.status?.toLowerCase() === 'in progress'
+  ).length,
+
+  done: tasks.filter(
+    (t) => t.status?.toLowerCase() === 'done'
+  ).length,
 
   overdue: tasks.filter(
     (t) =>
       t.dueDate &&
       new Date(t.dueDate) < new Date() &&
-      t.status !== 'done'
+      t.status?.toLowerCase() !== 'done'
   ).length,
 };
 
