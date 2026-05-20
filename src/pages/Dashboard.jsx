@@ -23,30 +23,74 @@ import {
 } from 'recharts';
 
 import Loader from '../components/common/Loader';
-import { projectApi } from '../api/project.api';
+// import { projectApi } from '../api/project.api';
 import { formatDate } from '../utils/format';
 
-// import { useDispatch, useSelector } from 'react-redux';
-// import { fetchProjects } from '../redux/slices/projectSlice';
-// import { fetchTasks } from '../redux/slices/taskSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProjects } from '../redux/slices/projectSlice';
+import { fetchTasks } from '../redux/slices/taskSlice';
 
 const PIE_COLORS = ['#94a3b8', '#6366f1', '#10b981'];
 
 export default function Dashboard() {
-  const [stats, setStats] = useState(null);
-  const [loading, setLoading] = useState(true);
+  // const [stats, setStats] = useState(null);
+  // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    projectApi
-      .dashboard()
-      .then((res) => setStats(res.data))
-      .finally(() => setLoading(false));
-  }, []);
+  // useEffect(() => {
+  //   projectApi
+  //     .dashboard()
+  //     .then((res) => setStats(res.data))
+  //     .finally(() => setLoading(false));
+  // }, []);
 
-  if (loading) return <Loader />;
-  if (!stats) return null;
+  // if (loading) return <Loader />;
+  // if (!stats) return null;
 
-  const { counts, recent } = stats;
+  // const { counts, recent } = stats;
+
+  const dispatch = useDispatch();
+
+const { items: projects, loading: projectsLoading } = useSelector(
+  (state) => state.projects
+);
+
+const { items: tasks, loading: tasksLoading } = useSelector(
+  (state) => state.tasks
+);
+
+useEffect(() => {
+  dispatch(fetchProjects());
+  dispatch(fetchTasks());
+}, [dispatch]);
+
+if (projectsLoading || tasksLoading) return <Loader />;
+
+const counts = {
+  projects: projects.length,
+  total: tasks.length,
+
+  todo: tasks.filter((t) => t.status === 'todo').length,
+
+  inProgress: tasks.filter(
+    (t) => t.status === 'in_progress'
+  ).length,
+
+  done: tasks.filter((t) => t.status === 'done').length,
+
+  overdue: tasks.filter(
+    (t) =>
+      t.dueDate &&
+      new Date(t.dueDate) < new Date() &&
+      t.status !== 'done'
+  ).length,
+};
+
+const recent = [...tasks]
+  .sort(
+    (a, b) =>
+      new Date(b.updatedAt) - new Date(a.updatedAt)
+  )
+  .slice(0, 5);
 
   const pieData = [
     { name: 'Todo', value: counts.todo },
