@@ -74,8 +74,8 @@ const counts = {
   ).length,
 
   inProgress: tasks.filter(
-    (t) => t.status?.toLowerCase() === 'in progress'
-  ).length,
+  (t) => t.status === 'in-progress'
+).length,
 
   done: tasks.filter(
     (t) => t.status?.toLowerCase() === 'done'
